@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block head %} 
+<h2>To Do List</h2>
+ {% endblock %}
+
+{% block body %} 
+<div class = "content">
+    <h4 style="text-align: center;">"There are no Tasks.</h4>
+    <h3>List</h3>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Created On</th>
+            <th>Task</th>
+            <th>Status</th>
+            <th>Action</th>
+
+        </tr>
+        {% for task in tasks %}
+            <tr>
+                <td>{{ task.id }}</td>
+                <td>{{ task.date_created.date() }}</td>
+                <td>{{ task.content }}</td>
+                {% if task.completed == 0  %}
+                    <td> In Progress   </td>    
+                
+                {% else %}
+                    <td> Completed   </td> 
+                {% endif%}
+                <td>
+                    <a href = "/delete/{{task.id}}">Delete</a>
+                    <br>
+                    <a href = "/update/{{task.id}}">Update</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <form action="/" method="POST">
+        <input type="test" name="content" id = "content">
+        <input type="submit" value="add task">
+    </form>
+</div>
+{% endblock %}

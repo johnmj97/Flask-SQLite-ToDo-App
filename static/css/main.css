@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: bisque;
+}
+.content {
+    margin: 0 auto;
+    width: 600px;
+}
+table, td, th {
+    border: 1px solid #030303;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th {
+    height: 30px;
+}
+
+td {
+    text-align: center;
+    padding: 20px;
+    width: 50px;
+}
+form{
+    margin-top: 20px;
+    position: relative;
+    margin-right: 100px;
+}
+#content {
+    width: 70%;
+    margin-right: 10px;
+
+}
