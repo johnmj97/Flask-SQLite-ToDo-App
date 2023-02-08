@@ -39,7 +39,7 @@ def index():
                print(f'error{e}') 
      else:
           #pass
-          tasks= db.session.execute(db.select(todo).order_by(todo.date_created)).all()
+          tasks= db.session.execute(db.select(todo).order_by(todo.date_created)).scalars()
           app.logger.warning(tasks)
           return render_template('index.html',tasks=tasks)
 
